@@ -59,8 +59,7 @@ android {
         }
         release {
             isMinifyEnabled = true
-            isMinifyEnabled = true
-            isShrinkResources = true
+            isShrinkResources = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -112,6 +111,13 @@ android {
     // 开启viewBinding
     buildFeatures {
         viewBinding = true
+    }
+    splits {
+        abi {
+            reset() // 清除默认配置
+            include("armeabi-v7a", "arm64-v8a") // 保留的架构
+            isUniversalApk = false // 不生成包含所有架构的通用包
+        }
     }
 }
 

@@ -23,6 +23,7 @@ import com.darcy.lib_overlay.notification.OverlayNotificationUtil
 import com.darcy.lib_overlay.service.OverlayService
 import com.darcy.lib_overlay.utils.OverlayCheckUtil
 import com.darcy.skipads.databinding.ActivityMainBinding
+import com.darcy.skipads.react_native.RNActivity
 
 class MainActivity : AppCompatActivity() {
     companion object {
@@ -60,6 +61,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initView() {
+        binding.btnRNActivity.setOnClickListener {
+            startActivity(Intent(this, RNActivity::class.java))
+        }
         binding.testAccessibility.setOnClickListener {
             startActivity(Intent(this, TestSkipActivity::class.java))
         }
