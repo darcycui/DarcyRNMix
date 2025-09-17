@@ -22,6 +22,14 @@ class DarcySkipApp : Application(), ReactApplication {
             override fun getUseDeveloperSupport(): Boolean = BuildConfig.DEBUG
             override val isNewArchEnabled: Boolean = BuildConfig.IS_NEW_ARCHITECTURE_ENABLED
             override val isHermesEnabled: Boolean = BuildConfig.IS_HERMES_ENABLED
+            override fun getJSBundleFile(): String? {
+                var jsBundleFilePath: String? = ReactNativeHelper.getJsBundleFilePath()
+                return if (jsBundleFilePath?.isNotEmpty() == true) {
+                    jsBundleFilePath
+                } else {
+                    super.getJSBundleFile()
+                }
+            }
         }
 
     override val reactHost: ReactHost

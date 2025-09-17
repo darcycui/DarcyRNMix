@@ -13,7 +13,7 @@
       "attributes": [],
       "versionCode": 3,
       "versionName": "1.0.3",
-      "outputFile": "DarcySkipAds_V1.0.3_20250916-13-57-34.apk"
+      "outputFile": "DarcySkipAds_V1.0.3_20250917-13-53-53.apk"
     }
   ],
   "elementType": "File",
@@ -22,14 +22,14 @@
       "minApi": 28,
       "maxApi": 30,
       "baselineProfiles": [
-        "baselineProfiles/1/DarcySkipAds_V1.0.3_20250916-13-57-34.dm"
+        "baselineProfiles/1/DarcySkipAds_V1.0.3_20250917-13-53-53.dm"
       ]
     },
     {
       "minApi": 31,
       "maxApi": 2147483647,
       "baselineProfiles": [
-        "baselineProfiles/0/DarcySkipAds_V1.0.3_20250916-13-57-34.dm"
+        "baselineProfiles/0/DarcySkipAds_V1.0.3_20250917-13-53-53.dm"
       ]
     }
   ],

@@ -118,6 +118,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnOverlay" />
 
+
+    <Button
+        android:id="@+id/btnSetJsBundlePath"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="设置 RN bundle 目录"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnRNActivity" />
+
     <TextView
         android:id="@+id/tvSwitcher"
         android:layout_width="200dp"
@@ -130,7 +140,7 @@
         android:gravity="center"
         android:textColor="@color/black"
         android:textSize="30sp"
-        app:layout_constraintTop_toBottomOf="@+id/btnRNActivity" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSetJsBundlePath" />
 
     <SeekBar
         android:id="@+id/seekbar"

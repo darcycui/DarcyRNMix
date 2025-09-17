@@ -5,21 +5,38 @@
  * @format
  */
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
+import { NewAppScreen } from "@react-native/new-app-screen";
+import {
+  StatusBar,
+  StyleSheet,
+  useColorScheme,
+  View,
+  Text,
+  Image,
+  TextInput,
+  ScrollView,
+  Button,
+} from "react-native";
 import {
   SafeAreaProvider,
   useSafeAreaInsets,
-} from 'react-native-safe-area-context';
+} from "react-native-safe-area-context";
+import HomePage from "./ts/ui/HomePage";
+import HomeClassPage from "./ts/ui/HomeClassPage";
 
 function App() {
-  const isDarkMode = useColorScheme() === 'dark';
+  const isDarkMode = useColorScheme() === "dark";
 
   return (
     <SafeAreaProvider>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-      translucent={false} backgroundColor={isDarkMode ? 'black' : 'white'}/>
-      <AppContent />
+      <StatusBar
+        barStyle={isDarkMode ? "light-content" : "dark-content"}
+        translucent={false}
+        backgroundColor={isDarkMode ? "black" : "white"}
+      />
+      {/* <AppContent /> */}
+      <HomePage />
+      <HomeClassPage />
     </SafeAreaProvider>
   );
 }

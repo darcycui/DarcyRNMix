@@ -24,6 +24,9 @@ import com.darcy.lib_overlay.service.OverlayService
 import com.darcy.lib_overlay.utils.OverlayCheckUtil
 import com.darcy.skipads.databinding.ActivityMainBinding
 import com.darcy.skipads.react_native.RNActivity
+import com.darcy.skipads.app.ReactNativeHelper
+import java.io.IOException
+import java.io.File
 
 class MainActivity : AppCompatActivity() {
     companion object {
@@ -43,6 +46,9 @@ class MainActivity : AppCompatActivity() {
     }
     private var overlayService: OverlayService? = null
     private var connection: ServiceConnection? = null
+    private val context by lazy {
+        this
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -61,6 +67,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initView() {
+        binding.btnSetJsBundlePath.setOnClickListener {
+            val privateDir = context.getExternalFilesDir("js bundle") // 获取应用私有外部存储目录
+            val file = File(privateDir, "filename.txt") // 替换为你的文件名
+            try {
+                file.writeText("你的字符串内容") // 自动处理字符编码
+            } catch (e: IOException) {
+                e.printStackTrace()
+            }
+            val jsBundleFile = File (privateDir, "index.new.bundle")
+            ReactNativeHelper.setJsBundleFilePath(jsBundleFile.absolutePath)
+        }
         binding.btnRNActivity.setOnClickListener {
             startActivity(Intent(this, RNActivity::class.java))
         }
